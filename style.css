@@ -1,0 +1,87 @@
+:root{
+  --bg:#000000;
+  --text:#ffffff;
+  --muted:#cfcfcf;
+  --panel:#0e0e0e;
+  --maxw:980px;
+  --mono: "Courier New", monospace;
+}
+
+/* Reset */
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;font-family:var(--mono);background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased}
+
+/* Full-screen terminal layout */
+.terminal{
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  align-items:stretch;
+}
+
+/* Top line */
+.topline{
+  padding:22px 24px;
+  border-bottom:1px solid rgba(255,255,255,0.03);
+}
+.welcome{font-size:16px;color:var(--muted)}
+.welcome strong{color:var(--text)}
+
+/* Center box (main content) */
+.centerbox{
+  max-width:var(--maxw);
+  margin: 40px auto;
+  width:calc(100% - 48px);
+  text-align:center;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:20px;
+  padding:10px 0;
+}
+
+/* Name and description */
+.name{font-size:48px;letter-spacing:1px;margin-bottom:6px}
+.desc{color:var(--muted);font-size:16px; margin-bottom:12px}
+
+/* Panels */
+.panel{
+  background:var(--panel);
+  border:1px solid rgba(255,255,255,0.03);
+  width:100%;
+  max-width:760px;
+  padding:20px;
+  border-radius:8px;
+  text-align:left;
+}
+.panel.small{max-width:560px}
+.panel-title{font-size:12px;color:var(--muted);text-transform:uppercase;margin-bottom:8px}
+.panel-body{font-size:16px;line-height:1.6;color:var(--text);white-space:pre-wrap}
+
+/* Footer contact centered bottom */
+.contact{
+  padding:22px 24px;
+  border-top:1px solid rgba(255,255,255,0.03);
+}
+.contact-inner{
+  max-width:var(--maxw);
+  margin:0 auto;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:8px;
+  color:var(--muted);
+  font-size:14px;
+}
+.contact a{color:var(--text);text-decoration:none}
+.contact span{color:var(--text)}
+
+/* Responsive: mobile tweaks */
+@media (max-width:640px){
+  .name{font-size:34px}
+  .panel{padding:16px}
+  .centerbox{margin:28px auto}
+  .topline{padding:16px}
+  .contact{padding:18px}
+}
